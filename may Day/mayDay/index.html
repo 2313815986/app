@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-
-	<head>
+<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="yingyong.css" />
-		<title></title>
-		<style>
-			*{
-				padding:0;
-
-			}
-		</style>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta http-equiv="Pragma" content="no-cache">
+	    <meta http-equiv="Cache-Control" content="no-cache">
+	    <meta http-equiv="Expires" content="0">
+	   
+		<title>五一正当时，恰出游好时机</title>
 	</head>
 
 	<body>
-		<div id="box">
+		<div id="md">
 			
 			<!--头部图-->
-			<banner>
+			<header>
 				<a href="javascript:void(0);">
-					<img src="img/0416应用知多少_02.png" />
+					<img src="img/0416banner.jpg" />
 					
 				</a>
-				<a href="javascript:void(0)" class="share-btn"></a>
-			</banner>
+				<a href="javascript:void(0)" class="share-btn" @click="shareTop"></a>
+			</header>
 
 			<!--内容图-->
 			<div id="banner">
 				<ul id="banner_content">
-					<!--第一个图-->
+					<!--第一个图 和包火车票-->
 					<li>
-						<a href="javascript:void(0);">
+						<a href="https://hsop.komect.com:10444/auth/thirdApp/authentication?appH5Id=hbTrainTicket&jsessionId=${JSESSIONID}&passId=${passId}">
 							<div class="banner_left">
 								<img src="img/0416应用知多少_05.png" />
 							</div>
@@ -42,9 +44,9 @@
 						</a>
 					</li>
 
-					<!--第二个图-->
+					<!--第二个图 蜀景畅游-->
 					<li>
-						<a href="javascript:void(0);">
+						<a href="http://wcs.wxcitycq.com:18087/wcs/pages/charmcq2/index.jsp;">
 							<div class="banner_left">
 								<img src="img/0416应用知多少_08.png" />
 							</div>
@@ -55,10 +57,10 @@
 						</a>
 					</li>
 
-					<!--第三个-->
+					<!--第三个 畅游重庆-->
 
 					<li>
-						<a href="javascript:void(0);">
+						<a href="http://sjcy.egovlife.com?token=${token}">
 							<div class="banner_left">
 								<img src="img/0416应用知多少_10.png" />
 							</div>
@@ -71,16 +73,15 @@
 				</ul>
 
 			</div>
-
+				<share_to_app 
+					ref="shareToApp" 
+					:share_config="shareOptions" 
+					:bridge="true">
+				</share_to_app>
+			
 		</div>
-
-	</body>
 	<script type="text/javascript">
-		window.onresize = window.onload = function() {
-			var width = document.documentElement.clientWidth;
-			document.documentElement.style.fontSize = width / 25 + "px";
-			console.log(width / 25)
-		}
-	</script>
 
+	</script>
+	</body>
 </html>
